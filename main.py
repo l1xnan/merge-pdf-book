@@ -7,18 +7,18 @@ from pypdf import PdfWriter
 base_url = "https://github.com/Visualize-ML"
 
 names = [
-    "Book1_Python-For-Beginners",
-    "Book2_Beauty-of-Data-Visualization",
-    "Book3_Elements-of-Mathematics",
-    "Book4_Power-of-Matrix",
-    "Book5_Essentials-of-Probability-and-Statistics",
-    "Book6_First-Course-in-Data-Science",
-    "Book7_Visualizations-for-Machine-Learning",
+    ("Book1_Python-For-Beginners", "编程不难"),
+    ("Book2_Beauty-of-Data-Visualization", "可视之美"),
+    ("Book3_Elements-of-Mathematics", "数学要素"),
+    ("Book4_Power-of-Matrix", "矩阵力量"),
+    ("Book5_Essentials-of-Probability-and-Statistics", "统计至简"),
+    ("Book6_First-Course-in-Data-Science", "数据有道"),
+    ("Book7_Visualizations-for-Machine-Learning", "机器学习"),
 ]
 
 Path("repos").mkdir(exist_ok=True, parents=True)
 
-for name in names:
+for name, book in names:
     print("=" * 30)
     print(name)
     repo = f"{base_url}/{name}.git"
@@ -37,7 +37,7 @@ for name in names:
         print(bookmark)
         merger.append(pdf, bookmark)
 
-    merger.write(f"{name}.pdf")
+    merger.write(f"{name}_{book}.pdf")
     merger.close()
 
 if __name__ == "__main__":
