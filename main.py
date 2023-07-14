@@ -16,6 +16,8 @@ names = [
     "Book7_Visualizations-for-Machine-Learning",
 ]
 
+Path("repos").mkdir(exist_ok=True, parents=True)
+
 for name in names:
     print("=" * 30)
     print(name)
@@ -38,5 +40,5 @@ for name in names:
     merger.write(f"{name}.pdf")
     merger.close()
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     pass
